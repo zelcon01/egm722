@@ -25,6 +25,8 @@ def scale_bar(ax, location=(0.92, 0.95)):
 
     ax.plot([sbx, sbx - 20000], [sby, sby], color='k', linewidth=9, transform=ax.projection) # plot a thick black line, 20 km long
     ax.plot([sbx, sbx - 10000], [sby, sby], color='k', linewidth=6, transform=ax.projection) # plot a smaller black line from 0 to 10 km long
+    ax.plot([sbx, sbx - 5000], [sby, sby], color='k', linewidth=6, transform=ax.projection)  # plot a smaller black line from 0 to 10 km long
+    ax.plot([sbx, sbx - 1000], [sby, sby], color='k', linewidth=6, transform=ax.projection)  # plot a smaller black line from 0 to 10 km long
     ax.plot([sbx-10000, sbx - 20000], [sby, sby], color='w', linewidth=6, transform=ax.projection) # plot a white line from 10 to 20 km
 
     ax.text(sbx, sby-5000, '20 km', transform=ax.projection, fontsize=8) # add a label at 20 km
@@ -94,7 +96,11 @@ river_feat = ShapelyFeature(rivers['geometry'], # first argument is the geometry
 ax.add_feature(river_feat) # add the collection of features to the map
 
 # ShapelyFeature creates a polygon, so for point data we can just use ax.plot()
-town_handle = ax.plot(towns.geometry.x, towns.geometry.y, 's', color='0.5', ms=6, transform=ccrs.PlateCarree())
+acity = towns[towns['STATUS'] == 'City']
+atown = towns[towns['STATUS'] == 'Town']
+
+city_handle = ax.plot(acity.geometry.x, acity.geometry.y, 's', color='red', ms=6, transform=ccrs.PlateCarree())
+town_handle = ax.plot(atown.geometry.x, atown.geometry.y, 'o', color='0.5', ms=6, transform=ccrs.PlateCarree())
 
 # generate a list of handles for the county datasets
 # first, we add the list of names, then the list of colors, and finally we set the transparency
@@ -112,8 +118,8 @@ nice_names = [name.title() for name in county_names]
 
 # ax.legend() takes a list of handles and a list of labels corresponding to the objects 
 # you want to add to the legend
-handles = county_handles + water_handle + river_handle + town_handle # use '+' to concatenate (combine) lists
-labels = nice_names + ['Lakes', 'Rivers', 'Towns']
+handles = county_handles + water_handle + river_handle + town_handle + city_handle # use '+' to concatenate (combine) lists
+labels = nice_names + ['Lakes', 'Rivers', 'Towns', 'Cities']
 
 leg = ax.legend(handles, labels, title='Legend', title_fontsize=12, 
                  fontsize=10, loc='upper left', frameon=True, framealpha=1)
