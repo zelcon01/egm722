@@ -18,22 +18,29 @@ def generate_handles(labels, colors, edge='k', alpha=1):
 # create a scale bar of length 20 km in the upper right corner of the map
 # adapted this question: https://stackoverflow.com/q/32333870
 # answered by SO user Siyh: https://stackoverflow.com/a/35705477
-def scale_bar(ax, location=(0.92, 0.95)):
-    x0, x1, y0, y1 = ax.get_extent() # get the current extent of the axis
-    sbx = x0 + (x1 - x0) * location[0] # get the lower left x coordinate of the scale bar
-    sby = y0 + (y1 - y0) * location[1] # get the lower left y coordinate of the scale bar
+import matplotlib.pyplot as plt
 
-    ax.plot([sbx, sbx - 20000], [sby, sby], color='k', linewidth=9, transform=ax.projection) # plot a thick black line, 20 km long
-    ax.plot([sbx, sbx - 10000], [sby, sby], color='k', linewidth=6, transform=ax.projection) # plot a smaller black line from 0 to 10 km long
-    ax.plot([sbx, sbx - 5000], [sby, sby], color='k', linewidth=6, transform=ax.projection)  # plot a smaller black line from 0 to 10 km long
-    ax.plot([sbx, sbx - 1000], [sby, sby], color='k', linewidth=6, transform=ax.projection)  # plot a smaller black line from 0 to 10 km long
-    ax.plot([sbx-10000, sbx - 20000], [sby, sby], color='w', linewidth=6, transform=ax.projection) # plot a white line from 10 to 20 km
+import matplotlib.pyplot as plt
 
-    ax.text(sbx, sby-5000, '20 km', transform=ax.projection, fontsize=8) # add a label at 20 km
-    ax.text(sbx-12500, sby-5000, '10 km', transform=ax.projection, fontsize=8) # add a label at 10 km
-    ax.text(sbx-24500, sby-5000, '0 km', transform=ax.projection, fontsize=8) # add a label at 0 km
 
-    return ax
+def scale_bar(ax, location=(0.92, 0.95), length=50000, interval=10000):
+    x0, x1, y0, y1 = ax.get_extent()  # get the current extent of the axis
+    sbx = x0 + (x1 - x0) * location[0]  # get the lower left x coordinate of the scale bar
+    sby = y0 + (y1 - y0) * location[1]  # get the lower left y coordinate of the scale bar
+
+    # Calculate the adjustment for the starting point of the scale bar
+    start_adjustment = length % interval
+
+    # Plot the scale bar lines
+    for i in range(0, length + interval, interval):
+        color = 'black' if (i // interval) % 2 == 0 else 'lightgrey'  # alternate between black and white
+        start_point = sbx - min(i + interval, length) + start_adjustment
+        end_point = sbx - min(i, length)
+        ax.plot([start_point, end_point], [sby, sby], color=color, linewidth=9, transform=ax.projection)
+
+    # Add labels for the scale bar
+    for i in range(0, length + interval, interval):
+        ax.text(sbx - i + start_adjustment, sby - 5000, f'{i // 1000}km', transform=ax.projection, fontsize=6)
 
 
 # load the datasets
