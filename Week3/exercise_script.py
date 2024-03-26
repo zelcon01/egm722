@@ -8,6 +8,11 @@ import matplotlib.patches as mpatches
 
 # ---------------------------------------------------------------------------------------------------------------------
 # in this section, write the script to load the data and complete the main part of the analysis.
+
+counties = gpd.read_file('data_files/Counties.shp') # load the Counties shapefile
+counties = gpd.read_file('data_files/NI_Wards.shp') # load the Counties shapefile
+
+
 # try to print the results to the screen using the format method demonstrated in the workbook
 
 # load the necessary data here and transform to a UTM projection
