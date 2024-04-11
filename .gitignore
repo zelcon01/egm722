@@ -2,3 +2,4 @@
 .idea/
 /Arc
 Project/NDVI Time series using openEO.ipynb
+*.lock
