@@ -3,11 +3,26 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - python
-  - geopandas
-  - cartopy>=0.21
-  - jupyterlab
-  - ipywidgets
-  - rasterio
-  - pyepsg
-  - folium
+  # Essential Python libraries
+  - python #Python interpreter
+
+  # Geographic libraries
+  - geopandas #Handles geospatial data structures and operations.
+  - cartopy>=0.21 #Creates maps and visualizations with geospatial data.
+  - rasterio #Reads and writes raster datasets.
+  - pyepsg #Provides access to EPSG codes for coordinate reference systems.
+  - folium #Generates interactive maps with Leaflet.js.
+  - shapely #Performs geometric operations on geometric objects.
+
+  # Data analysis and visualization libraries
+  - scipy #Provides scientific computing functions.
+  - pandas #Handles data manipulation and analysis.
+  - matplotlib #Creates static and interactive visualizations.
+  - numpy #Performs numerical computations on arrays and matrices.
+
+  # Interactive tools
+  - jupyterlab #Interactive computing environment for Python.
+  - ipywidgets #Adds interactive widgets to Jupyter notebooks.
+
+  # Earth observation processing
+  - openeo #Connects to the OpenEO API for Earth observation data processing.
