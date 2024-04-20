@@ -7,3 +7,12 @@ Project/Data/madrid_landfills_buff_1km.qmd
 Project/swir-results/timeseries-basic.csv
 Project/swir-results/timeseries-basic.csv
 Project/CH4-results/CH4_timeseries.csv
+Project/Sentinel-5P_Spain.GTiff
+Project/Sentinel-5P_Spain3857a.GTiff
+Project/CH4-results/CH4_timeseries.csv
+Project/CH4-results/CH4_timeseries.csv
+Project/Data/landfill_5000m_buffer1.geojson
+Project/Data/landfill_5000m_buffered_Python.geojson
+Project/Data/landfill_5000m_buffered_QGIS.geojson
+Project/Data/landfill_5000m_buffered_QGIS.qmd
+Project/CH4-results/CH4_timeseries.csv
