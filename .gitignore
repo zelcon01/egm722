@@ -21,3 +21,6 @@ Project/Sentinel-5P_Spain3857.GTiff
 Project/Gas_Timeseries_results/Gas_timeseries.csv
 =======
 >>>>>>> Stashed changes
+Project/Sentinel-2_active_emission.GTiff
+Project/Sentinel-2_no_emission.GTiff
+Project/Methane_Column.GTiff
