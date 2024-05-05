@@ -1,43 +1,14 @@
-.ipynb_checkpoints/
-.idea/
-/Arc
-Project/NDVI Time series using openEO.ipynb
-*.lock
-Project/Data/madrid_landfills_buff_1km.qmd
-Project/swir-results/timeseries-basic.csv
-Project/swir-results/timeseries-basic.csv
-Project/CH4-results/CH4_timeseries.csv
 Project/Sentinel-5P_Spain.GTiff
-Project/Sentinel-5P_Spain3857a.GTiff
-Project/CH4-results/CH4_timeseries.csv
-Project/CH4-results/CH4_timeseries.csv
-Project/Data/landfill_5000m_buffer1.geojson
-Project/Data/landfill_5000m_buffered_Python.geojson
-Project/Data/landfill_5000m_buffered_QGIS.geojson
-Project/Data/landfill_5000m_buffered_QGIS.qmd
-Project/CH4-results/CH4_timeseries.csv
 Project/Sentinel-5P_Spain3857.GTiff
-<<<<<<< Updated upstream
 Project/Gas_Timeseries_results/Gas_timeseries.csv
-=======
->>>>>>> Stashed changes
-Project/Sentinel-2_active_emission.GTiff
-Project/Sentinel-2_no_emission.GTiff
-Project/Methane_Column.GTiff
-Project/Sentinel-2_truecolour.GTiff
-Project/~$M722 - How to guide Nick Kinsella.docx
-Project/Sentinel-2_truecolour.GTiff
 Project/Sentinel-2_truecolour.GTiff
 Project/Sentinel-2_no_emissionMBMP.GTiff
 Project/Sentinel-2_active_emissionMBMP.GTiff
-Project/Sentinel-2_truecolour.GTiff
-Project/Sentinel-2_truecolour.GTiff
-Project/Sentinel-2_truecolour.GTiff
-Project/EGM722 - How to guide Nick Kinsella.docx
-Project/Sentinel-2_truecolour.GTiff
-Project/EGM722 - How to guide Nick Kinsella.docx
-Project/EGM722 - How to guide Nick Kinsella.docx
-Project/EGM722 - How to guide Nick Kinsella.docx
-EGM722 - How to guide Nick Kinsella.docx
-~$M722 - How to guide Nick Kinsella.docx
-EGM722 - How to guide Nick Kinsella.docx
+/Week1
+/Week2
+/Week3
+/Week4
+/Week5
+/Project/.ipynb_checkpoints
+/.idea
+/.ipynb_checkpoints
